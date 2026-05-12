@@ -1,29 +1,61 @@
-# Arquivo .gitignore para projeto Python 
+# .gitignore — Projeto Python / Data Science
 
-### Ambiente Virtual ###
+# ==============================================================================
+# DADOS SENSÍVEIS (CPF/CNS — LGPD)
+# Nunca versionar dados de pacientes!
+# ==============================================================================
+base/
+analise_output/
+*.csv
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+*.duckdb.wal
+
+# ==============================================================================
+# Ambiente Virtual
+# ==============================================================================
 .venv/
 venv/
 env/
 ENV/
+.python-version
 
-### Dependências Python ###
+# ==============================================================================
+# Python — bytecode e gerados
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.egg
+MANIFEST
 
-### Arquivos de ambiente ###
+# ==============================================================================
+# Jupyter / IPython
+# ==============================================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ==============================================================================
+# Variáveis de ambiente
+# ==============================================================================
 .env
 .env.local
 .env.dev
 .env.prod
 .env.test
 
-### Arquivos de configuração local ###
-*.local
-*.local.*
-settings.ini
-
-### Arquivos do IDE ###
+# ==============================================================================
+# IDEs
+# ==============================================================================
 # Visual Studio Code
 .vscode/
 .vscode/*
@@ -32,61 +64,55 @@ settings.ini
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# PyCharm
+# PyCharm / JetBrains
 .idea/
 *.iml
 *.ipr
 *.iws
 
-### Arquivos de sistema ###
+# ==============================================================================
+# Sistema Operacional
+# ==============================================================================
 .DS_Store
+.DS_Store?
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-### Arquivos de log ###
+# ==============================================================================
+# Arquivos temporários / log
+# ==============================================================================
 *.log
 logs/
-
-### Arquivos temporários ###
 *.tmp
 *.temp
 *.bak
 *.swp
 *.swo
 
-### Arquivos gerados pelo Python ###
-*.egg-info/
-dist/
-build/
-pip-wheel-metadata/
-
-### Arquivos de banco de dados ###
-*.db
-*.sqlite
-*.sqlite3
-
-### Arquivos de upload ###
+# ==============================================================================
+# Arquivos de saída e uploads
+# ==============================================================================
 uploads/
-# *.xlsx
-#*.sql
-*.pdf
-
-### Arquivos de cache ###
-.cache/
-.pytest_cache/
-
-### Arquivos de documentação ###
 temp/
 saida/
 downloads/
-base/
-analise_output/
+*.pdf
 
-
-### Arquivos de teste ###
+# ==============================================================================
+# Testes e cobertura
+# ==============================================================================
 /test-results/
 /test-reports/
 .coverage
 htmlcov/
 .pytest_cache/
 
+# ==============================================================================
+# Segredos / credenciais
+# ==============================================================================
 auth.py
+secrets.py
+credentials.json
+*.pem
+*.key

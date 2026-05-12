@@ -1,0 +1,17 @@
+# ============================================================
+# requirements.txt — Rastreabilidade Assistencial SUS
+# ============================================================
+
+# Processamento colunar e Parquet (streaming, sem RAM overflow)
+pyarrow>=16.0.0
+
+# SQL in-process — substitui pandas/SQLite para volumes massivos
+duckdb>=1.0.0
+
+# Análise tabular (uso mínimo e pontual)
+pandas>=2.2.0
+
+# Jupyter
+notebook>=7.0.0
+jupyterlab>=4.0.0
+ipykernel>=6.0.0
